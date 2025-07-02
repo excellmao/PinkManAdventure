@@ -12,7 +12,7 @@ public class CameraMovement : MonoBehaviour
     private void Update()
     {
         transform.position = Vector3.SmoothDamp(transform.position, new Vector3(currentPosX, transform.position.y,
-            transform.position.z), ref velocity, speed);
+            transform.position.z), ref velocity, speed); //smoothdamp for smooth transitioning
     }
 
     public void MovetoNew(Transform _new)
