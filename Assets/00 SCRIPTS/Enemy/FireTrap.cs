@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,16 +16,26 @@ public class FireTrap : MonoBehaviour
     private bool triggered;
     private bool active;
 
+    private Health playerHealth; 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    private void Update()
+    {
+        if (playerHealth != null && active)
+        {
+            playerHealth.TakeDamage(damage);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            playerHealth = collision.GetComponent<Health>();
             if (!triggered)
             {
                 StartCoroutine(ActivateFireTrap());
@@ -37,6 +48,13 @@ public class FireTrap : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            playerHealth = null;
+        }
+    }
     private IEnumerator ActivateFireTrap()
     {
         //trigger -> turn red to tell user

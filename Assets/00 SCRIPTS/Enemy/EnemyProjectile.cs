@@ -8,6 +8,13 @@ public class EnemyProjectile : EnemyDamage //inheritance
     [SerializeField] private float speed;
     [SerializeField] private float resetTime;
     private float lifetime;
+    private Animator anim;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     public void ActivateProjectile()
     {
         lifetime = 0;
