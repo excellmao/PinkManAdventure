@@ -175,6 +175,7 @@ MonoBehaviour:
   player:
     serializedVersion: 2
     m_Bits: 256
+  swordSlash: {fileID: 8300000, guid: edeb55b89616da34b88849a34363c6a9, type: 3}
 --- !u!114 &6934447498668402365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +193,8 @@ MonoBehaviour:
   numOfFlash: 0
   components:
   - {fileID: 2627269617603534490}
+  death: {fileID: 8300000, guid: ef958efeb237ac84e8f01fabd3488d74, type: 3}
+  hurt: {fileID: 8300000, guid: b55255c231517644791e672b227a5e62, type: 3}
 --- !u!114 &2336934156153655744
 MonoBehaviour:
   m_ObjectHideFlags: 0

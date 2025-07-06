@@ -179,6 +179,7 @@ MonoBehaviour:
   player:
     serializedVersion: 2
     m_Bits: 256
+  impactSFX: {fileID: 8300000, guid: 5c91ce7d668949949a8cc5fa52dd385f, type: 3}
 --- !u!95 &117229055766820244
 Animator:
   serializedVersion: 5

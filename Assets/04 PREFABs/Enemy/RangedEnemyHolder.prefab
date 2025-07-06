@@ -219,6 +219,7 @@ MonoBehaviour:
   player:
     serializedVersion: 2
     m_Bits: 256
+  shoot: {fileID: 8300000, guid: eda0b67853eb8b14d8f9cab9492bd26c, type: 3}
 --- !u!114 &4457615097564719342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +238,8 @@ MonoBehaviour:
   components:
   - {fileID: 3266564037848644195}
   - {fileID: 0}
+  death: {fileID: 8300000, guid: ef958efeb237ac84e8f01fabd3488d74, type: 3}
+  hurt: {fileID: 8300000, guid: b55255c231517644791e672b227a5e62, type: 3}
 --- !u!114 &6325077439565349714
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -144,3 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 1
+  pickupSFX: {fileID: 8300000, guid: db1f814f2bc4e224c9c44d8be288dfc3, type: 3}

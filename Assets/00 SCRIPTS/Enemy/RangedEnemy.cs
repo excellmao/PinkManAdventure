@@ -22,6 +22,9 @@ public class RangedEnemy : MonoBehaviour
     [SerializeField] private LayerMask player;
     private float cdTimer = Mathf.Infinity;
     
+    [Header("Sound Params")]
+    [SerializeField] private AudioClip shoot;
+    
     private Animator anim;
     private EnemyPatrol enemyPatrol;
     private void Awake()
@@ -48,6 +51,7 @@ public class RangedEnemy : MonoBehaviour
 
     private void RangedAttack()
     {
+        SoundManager.instance.PlaySound(shoot);
         cdTimer = 0;
         projectile[FindProjectile()].transform.position = firePoint.position;
         projectile[FindProjectile()].GetComponent<EnemyProjectile>().ActivateProjectile();

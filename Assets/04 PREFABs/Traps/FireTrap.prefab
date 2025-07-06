@@ -183,6 +183,7 @@ MonoBehaviour:
   damage: 1
   activateDelay: 2
   activeTime: 2
+  fireSFX: {fileID: 8300000, guid: d673217662317b441a5603377de9de8a, type: 3}
 --- !u!95 &2828944431323476684
 Animator:
   serializedVersion: 5

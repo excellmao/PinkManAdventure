@@ -15,6 +15,9 @@ public class FireTrap : MonoBehaviour
     
     private bool triggered;
     private bool active;
+    
+    [Header("SFX")]
+    [SerializeField] private AudioClip fireSFX;
 
     private Health playerHealth; 
     private void Awake()
@@ -63,6 +66,7 @@ public class FireTrap : MonoBehaviour
         
         //wait then turn on
         yield return new WaitForSeconds(activateDelay);
+        SoundManager.instance.PlaySound(fireSFX);
         spriteRenderer.color = Color.white;
         active = true;
         anim.SetBool("activated", true);

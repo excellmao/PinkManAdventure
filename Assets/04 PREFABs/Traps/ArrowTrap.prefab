@@ -185,6 +185,7 @@ MonoBehaviour:
   - {fileID: 4070809344675466475}
   - {fileID: 7521991359109422599}
   - {fileID: 9033771406065120945}
+  shoot: {fileID: 8300000, guid: 8303e1f7c8ee6fa42bed61a4eb745170, type: 3}
 --- !u!1 &7004679115177429687
 GameObject:
   m_ObjectHideFlags: 0

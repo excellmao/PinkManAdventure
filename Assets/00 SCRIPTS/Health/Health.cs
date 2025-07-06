@@ -21,6 +21,9 @@ public class Health : MonoBehaviour
     private Behaviour[] components;
     private bool invulnerable;
     
+    [Header("Death Sound")]
+    [SerializeField] private AudioClip death;
+    [SerializeField] private AudioClip hurt;
     private void Awake()
     {
         currentHealth = startHealth;
@@ -37,18 +40,22 @@ public class Health : MonoBehaviour
         {
             anim.SetTrigger("hurt");
             StartCoroutine(Invunerble());
+            SoundManager.instance.PlaySound(hurt);
         }
         else
         {
             if (!isDead)
             {
-                anim.SetTrigger("die");
                 // deactivated all attached components
                 foreach (Behaviour component in components)
                 {
                     component.enabled = false;
                 }
+                anim.SetBool("grounded", true);
+                anim.SetTrigger("die");
                 isDead = true;
+                SoundManager.instance.PlaySound(death);
+                StartCoroutine(HideSpriteAfterDelay(1));
             }
         }
     }
@@ -82,5 +89,21 @@ public class Health : MonoBehaviour
     private void Deactivate()
     {
         gameObject.SetActive(false);
+    }
+
+    public void Respawn()
+    {
+        isDead = false;
+        GetComponent<SpriteRenderer>().enabled = true;
+        AddHealth(startHealth);
+        anim.ResetTrigger("die");
+        anim.Play("idle");
+        StartCoroutine(Invunerble());
+        
+        // deactivated all attached components
+        foreach (Behaviour component in components)
+        {
+            component.enabled = true;
+        }
     }
 }

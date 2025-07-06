@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3404184738962526923}
   - component: {fileID: 5510279375178388811}
   - component: {fileID: 9076177300461762261}
+  - component: {fileID: 4958231624458801461}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -177,12 +178,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   jumpForce: 10
+  coyoteTime: 0.25
+  extraJumps: 0
+  wallJumpX: 1500
+  wallJumpY: 750
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   wallLayer:
     serializedVersion: 2
     m_Bits: 128
+  jumpSFX: {fileID: 8300000, guid: 44adf5a6289b8204d9ef496d0ca182de, type: 3}
 --- !u!114 &3404184738962526923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +214,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  shuriken: {fileID: 8300000, guid: d810251958372ed48a553ddebfa66fad, type: 3}
 --- !u!95 &5510279375178388811
 Animator:
   serializedVersion: 5
@@ -247,6 +254,21 @@ MonoBehaviour:
   components:
   - {fileID: 3404184738962526923}
   - {fileID: 4876705814359345313}
+  death: {fileID: 8300000, guid: ef958efeb237ac84e8f01fabd3488d74, type: 3}
+  hurt: {fileID: 8300000, guid: b55255c231517644791e672b227a5e62, type: 3}
+--- !u!114 &4958231624458801461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3252046724704851071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3fbacc49c41924a84cb380191554ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointSFX: {fileID: 8300000, guid: db1f814f2bc4e224c9c44d8be288dfc3, type: 3}
 --- !u!1 &5153245412282144208
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float attCd;
     [SerializeField] private Transform bulletStart;
     [SerializeField] private GameObject[] bullets;
+    [SerializeField] private AudioClip shuriken;
     private Animator anim;
     private PlayerMovement playerMovement;
     private float cdTimer = Mathf.Infinity;
@@ -28,6 +29,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Attack()
     {
+        SoundManager.instance.PlaySound(shuriken);
         cdTimer = 0;
         bullets[FindBullets()].transform.position = bulletStart.position;
         bullets[FindBullets()].GetComponent<Bullet>().SetDirection(Mathf.Sign(transform.localScale.x));

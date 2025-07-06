@@ -18,6 +18,9 @@ public class MeleeEnemy : MonoBehaviour
     [SerializeField] private LayerMask player;
     private float cdTimer = Mathf.Infinity;
     
+    [Header("Sound Params")]
+    [SerializeField]  private AudioClip swordSlash;
+    
     private Animator anim;
     private Health playerHealth;
 
@@ -34,10 +37,11 @@ public class MeleeEnemy : MonoBehaviour
         cdTimer += Time.deltaTime;
         if (PlayerInSight())
         {
-            if (cdTimer >= attCd)
+            if (cdTimer >= attCd && playerHealth.currentHealth > 0)
             {
                 cdTimer = 0;
                 anim.SetTrigger("meleeattack");
+                SoundManager.instance.PlaySound(swordSlash);
             }
         }
         if (enemyPatrol != null)

@@ -16,7 +16,9 @@ public class SpikeHead : EnemyDamage
     private Vector3 dest;
     private bool attacking;
     
-
+    [Header("SFX")]
+    [SerializeField] private AudioClip impactSFX;
+    
     private void OnEnable()
     {
         Stop();
@@ -70,6 +72,7 @@ public class SpikeHead : EnemyDamage
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        SoundManager.instance.PlaySound(impactSFX);
         base.OnTriggerEnter2D(collision);
         //stop spikehead when hit
         Stop();
