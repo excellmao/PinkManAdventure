@@ -27,3 +27,6 @@
 ### Trải nghiệm người dùng
 * Màn hình Pause và Game Over
 * Có thể chỉnh âm lượng SFX và nhạc riêng biệt
+
+## Cách cài đặt
+Vào phần Release, tải file PinkManAdventure.rar về, sau đó giải nén và khởi động file .exe để chơi thôi!
